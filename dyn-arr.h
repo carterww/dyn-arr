@@ -1,3 +1,10 @@
+#ifndef DYN_ARR_H
+#define DYN_ARR_H
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <stdint.h>
 #include <stdlib.h>
 
@@ -46,4 +53,10 @@ const void *da_get_idx(struct dynamic_array *da, size_t idx);
 int da_remove(struct dynamic_array *da, const void *element);
 int da_remove_idx(struct dynamic_array *da, size_t idx);
 
-void da_iter(struct dynamic_array *da, size_t *iter, void **element);
+int da_iter(struct dynamic_array *da, size_t *iter, void **element);
+
+#ifdef __cplusplus
+};
+#endif
+
+#endif // DYN_ARR_H
